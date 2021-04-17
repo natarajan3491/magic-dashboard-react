@@ -1,5 +1,8 @@
+// List of chart
 export const chartList = ["line", "bar", "pie", "doughnut", "bubble", "stacked-bar"];
+// Label list
 export const labels = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL"];
+// Background color values for chart
 export const backgroundColor = [
     'rgba(255, 99, 132, 0.2)',
     'rgba(255, 159, 64, 0.2)',
@@ -9,7 +12,7 @@ export const backgroundColor = [
     'rgba(153, 102, 255, 0.2)',
     'rgba(201, 203, 207, 0.2)'
   ];
-
+// Border color values for chart
 export const borderColor =[
     'rgb(255, 99, 132)',
     'rgb(255, 159, 64)',
@@ -19,8 +22,15 @@ export const borderColor =[
     'rgb(153, 102, 255)',
     'rgb(201, 203, 207)'
   ]
+// Data values for chart
 export const dataValue = [65, 59, 80, 81, 56, 55, 40];
 
+/**
+ * Function for to get chart values
+ * @param {*} val String
+ * @param {*} type Dtring
+ * @returns 
+ */
 export function getChart( val, type ){
     let value;
     switch(val){

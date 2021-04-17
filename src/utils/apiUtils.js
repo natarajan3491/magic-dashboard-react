@@ -1,9 +1,10 @@
+// Base API URL
 const BASE_API_PATH = 'http://localhost:8080/';
 
 /**
  * Set header
  */
-function headers(image = false) {
+function headers() {
   const header = new Headers({
     Accept: '*/*',
     'content-type': 'application/json; charset=utf-8',
@@ -13,7 +14,7 @@ function headers(image = false) {
 
 /**
  * Get request
- * @param {object} request
+ * @param {request} Object
  */
 export async function getRequest(request) {
   const { url } = request;
@@ -26,7 +27,7 @@ export async function getRequest(request) {
 
 /**
  * Post or Put request
- * @param {object} request
+ * @param {request} Object
  */
 export async function saveOrUpdateRequest(request) {
   const { url, data, method } = request;
@@ -40,7 +41,7 @@ export async function saveOrUpdateRequest(request) {
 
 /**
  * Delete request
- * @param {object} request
+ * @param {request} Object
  */
 export async function deleteRequest(request) {
   const { url, data } = request;

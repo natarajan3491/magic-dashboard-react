@@ -11,6 +11,9 @@ export default function App() {
   const [chart, setChart] = useState([]);
   const [chartId, setChartId] = useState();
 
+  /**
+   * Function for get chart list
+   */
   useEffect(
     () => {
       const getChartList = () => {
@@ -29,6 +32,9 @@ export default function App() {
     []
   );
 
+  /**
+   * Function for Draw chart
+   */
   useEffect(() => {
     chart && chart.map((val, i) => {
       if(chartList.includes(val)){
@@ -64,6 +70,9 @@ export default function App() {
     })
   }, [chart]);
 
+  /**
+   * Function for Re-draw chart
+   */
   useEffect(() => {
       const ctx = document.getElementById(type);
       new Chart(ctx, {
@@ -79,6 +88,10 @@ export default function App() {
       });    
   }, [type]);
 
+  /**
+   * Function for Change Type
+   * @param {*} val String
+   */
   function onChangeType(val) {
     setType(val.target.value)
     saveOrUpdateRequest({
@@ -97,19 +110,40 @@ export default function App() {
       });
   }
 
+  /**
+   * Function for Drag Enter
+   * @param {*} e Object
+   */
   const handleDragEnter = (e) => {
     e.preventDefault();
     e.stopPropagation();
   };
+
+  /**
+   * Function for Drag Leave
+   * @param {*} e Object
+   * @param {*} id Number
+   */
   const handleDragLeave = (e, id) => {
     e.preventDefault();
     e.stopPropagation();
     setDrag(id);
   };
+
+  /**
+   * Function for Drag Over 
+   * @param {*} e Object
+   */
   const handleDragOver = (e) => {
     e.preventDefault();
     e.stopPropagation();
   };
+
+  /**
+   * Function for Drop 
+   * @param {*} e Object
+   * @param {*} id Number
+   */
   const handleDrop = (e, id) => {
     e.preventDefault();
     e.stopPropagation();
